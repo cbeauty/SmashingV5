@@ -2,7 +2,7 @@
 <div class="image-container">
     <!-- The main background image is set via CSS on the container -->
     <img src="https://cbeauty.github.io/FlashLearning/1-b1.svg" alt="Overlay Image" class="overlay-image" id="overlayImage">
-    <button onclick="showOverlay()">Show Image</button>
+   
 </div>
 <style>
 image-container {
@@ -144,8 +144,8 @@ function showOverlay() {
       th.textContent = `Header ${i + 1}`;
       headerRow.appendChild(th);
     }
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
+   // thead.appendChild(headerRow);
+   // table.appendChild(thead);
 
     // Create table body
     const tbody = document.createElement('tbody');
@@ -161,6 +161,10 @@ function showOverlay() {
     }
     table.appendChild(tbody);
     container.appendChild(table);
+
+         setTimeout(() => {
+        showOverlay();
+    }, 6000);
   }
 
 const table = document.getElementById('table-container'); // Assuming your table has an ID 'myTable'
@@ -178,7 +182,10 @@ table.addEventListener('click', function(event) {
     answerCount++;
     }
     if( answerCount <25){
-    showOverlay();
+       setTimeout(() => {
+        showOverlay();
+    }, 1000);
+    
     }
     else{
     	alert("Congratulations");
